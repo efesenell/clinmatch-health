@@ -216,7 +216,14 @@ const translations = {
   },
 };
 
-const partnerHospitals = ["Acıbadem", "Liv Hospital", "Esteworld", "Memorial", "Medical Park", "Florence Nightingale"];
+const serviceNetwork = [
+  "Estetik Cerrahi Merkezleri",
+  "Diş Sağlığı Klinikleri",
+  "Saç Ekimi Merkezleri",
+  "Obezite Cerrahisi Birimleri",
+  "Göz Tedavi Merkezleri",
+  "Tüp Bebek Merkezleri",
+];
 
 export default function Home() {
   const [lang, setLang] = useState<Lang>("tr");
@@ -329,12 +336,12 @@ export default function Home() {
           <h2 className="text-4xl font-black">{t.networkTitle}</h2>
           <p className="mt-4 max-w-3xl text-slate-600">{t.networkDesc}</p>
           <div className="mt-10 grid gap-4 md:grid-cols-3">
-            {partnerHospitals.map((hospital) => (
-              <div key={hospital} className="rounded-2xl border border-cyan-100 bg-[#F8FCFF] p-6">
-                <h3 className="text-xl font-black">{hospital}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-500">{t.hospitalText}</p>
-              </div>
-            ))}
+            {serviceNetwork.map((item) => (
+  <div key={item} className="rounded-2xl border border-cyan-100 bg-[#F8FCFF] p-6">
+    <h3 className="text-xl font-black">{item}</h3>
+    <p className="mt-3 text-sm leading-6 text-slate-500">{t.hospitalText}</p>
+  </div>
+))}
           </div>
         </div>
       </section>
